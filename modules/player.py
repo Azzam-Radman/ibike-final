@@ -72,7 +72,7 @@ def display_role_page():
 	elif ss.role == 'Design Engineer':
 		st.title("Welcome to the Design Engineer Page!")
 		st.write("There is more to this page that is not being shown right now because it is slow to load and I need faster game testing. The images generated in Design_Engineer.render() seem to slow the app down.")
-		# d_e.render()
+		d_e.render()
 	elif ss.role == 'Mechanical Engineer':
 		m_e.render()
 	elif ss.role == 'Industrial Engineer':
