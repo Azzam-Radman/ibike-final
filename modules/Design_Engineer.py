@@ -243,7 +243,7 @@ def feedback():
 			text = f.read()
 
 	fb_d_m = st.text_area("Your feedback to the Mechanical Engineer", text)
-	if fb_d_m != "" and path.isfile(ss.filepath+'fb_d_m.txt'):
+	if fb_d_m != "":
 		with open(ss.filepath+"fb_d_m.txt", "w") as f:
 			f.write(fb_d_m)
 		st.markdown("---")
@@ -260,7 +260,7 @@ def feedback():
 			text = f.read()
 
 	fb_d_i = st.text_area("Your feedback to the Industrial Engineer", text)
-	if fb_d_i != "" and path.isfile(ss.filepath+'fb_d_i.txt'):
+	if fb_d_i != "":
 		with open(ss.filepath+"fb_d_i.txt", "w") as f:
 			f.write(fb_d_i)
 		st.markdown("---")
@@ -277,7 +277,7 @@ def feedback():
 			text = f.read()
 
 	fb_d_pm = st.text_area("Your feedback to the Project Manager", text)
-	if fb_d_pm != "" and path.isfile(ss.filepath+'fb_d_pm.txt'):
+	if fb_d_pm != "":
 		with open(ss.filepath+"fb_d_pm.txt", "w") as f:
 			f.write(fb_d_pm)
 		st.markdown("---")
@@ -294,7 +294,7 @@ def feedback():
 			text = f.read()
 
 	fb_d_pum = st.text_area("Your feedback to the Purchasing Manager", text)
-	if fb_d_pum != "" and path.isfile(ss.filepath+'fb_d_pum.txt'):
+	if fb_d_pum != "":
 		with open(ss.filepath+"fb_d_pum.txt", "w") as f:
 			f.write(fb_d_pum)
 		st.markdown("---")
