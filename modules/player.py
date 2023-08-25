@@ -44,7 +44,7 @@ def group_assign(group_key):
 		st.write("I'm sorry, the group you chose is full. Please select a differet group.")
 	else:
 		ss.group = group_key
-		ss['filepath'] = 'files/data'+ss.group+'/'
+		ss['filepath'] = 'files/data/'+ss.group+'/'
 		group_state['player_count'] += 1
 		ss['player'] = group_state['player_count']
 		if group_state['player_count'] == 5:
