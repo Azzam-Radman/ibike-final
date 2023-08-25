@@ -59,7 +59,7 @@ def feedback():
 	        text = f.read()
 	
 	fb_pm_m = st.text_area("Your feedback to the Mechanical Engineer", text)
-	if fb_pm_m != "" and path.isfile(ss.filepath+'fb_pm_m.txt'):
+	if fb_pm_m != "":
 	    with open(ss.filepath+"fb_pm_m.txt", "w") as f:
 	        f.write(fb_pm_m)
 	    st.markdown("---")
@@ -81,7 +81,7 @@ def feedback():
 	        text = f.read()
 	
 	fb_pm_i = st.text_area("Your feedback to the Industrial Engineer", text)
-	if fb_pm_i != "" and path.isfile(ss.filepath+'fb_pm_i.txt'):
+	if fb_pm_i != "":
 	    with open(ss.filepath+"fb_pm_i.txt", "w") as f:
 	        f.write(fb_pm_i)
 	
@@ -96,7 +96,7 @@ def feedback():
 	        text = f.read()
 	
 	fb_pm_pum = st.text_area("Your feedback to the Purchasing Manager", text)
-	if fb_pm_pum != "" and path.isfile(ss.filepath+'fb_pm_pum.txt'):
+	if fb_pm_pum != "":
 	    with open(ss.filepath+"fb_pm_pum.txt", "w") as f:
 	        f.write(fb_pm_pum)
 	    st.markdown("---")
@@ -113,7 +113,7 @@ def feedback():
 	        text = f.read()
 	
 	fb_pm_d = st.text_area("Your feedback to the Design Engineer", text)
-	if fb_pm_d != "" and path.isfile(ss.filepath+'fb_pm_d.txt'):
+	if fb_pm_d != "":
 	    with open(ss.filepath+"fb_pm_d.txt", "w") as f:
 	        f.write(fb_pm_d)
 	    st.markdown("---")
@@ -121,6 +121,43 @@ def feedback():
 	if st.button('Clear Feedback', key=3):
 	    if path.isfile(ss.filepath+'fb_pm_d.txt'):
 	        os.remove(ss.filepath+'fb_pm_d.txt')
+
+
+	# reading
+	st.header("Feedback **:red[From]**")
+	if path.isfile(ss.filepath+'fb_d_pm.txt'):
+		st.markdown("---")
+		st.write("Feedback from the **:red[Design Engineer]**")
+		with open(ss.filepath+'fb_d_pm.txt', 'r') as f:
+			text = f.read()
+		st.write(text)
+		st.markdown("---")
+
+	if path.isfile(ss.filepath+'fb_i_pm.txt'):
+		st.markdown("---")
+		st.write("Feedback from the **:red[Industrial Engineer]**")
+		with open(ss.filepath+'fb_i_pm.txt', 'r') as f:
+			text = f.read()
+		st.write(text)
+		st.markdown("---")
+
+
+	if path.isfile(ss.filepath+'fb_m_pm.txt'):
+		st.markdown("---")
+		st.write("Feedback from the **:red[Mechanical Engineer]**")
+		with open(ss.filepath+'fb_m_pm.txt', 'r') as f:
+			text = f.read()
+		st.write(text)
+		st.markdown("---")
+
+
+	if path.isfile(ss.filepath+'fb_pum_pm.txt'):
+		st.markdown("---")
+		st.write("Feedback from the **:red[Purchasing Manager]**")
+		with open(ss.filepath+'fb_pum_pm.txt', 'r') as f:
+			text = f.read()
+		st.write(text)
+		st.markdown("---")
 
 def create_orders():
 		
