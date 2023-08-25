@@ -52,6 +52,8 @@ def render():
 	    st.dataframe(just_df, width=3000)
 	
 def feedback():
+	st.header("Feedback **:red[TO]**")
+	st.markdown("---")
 	
 	text = ""
 	if path.isfile(ss.filepath+'fb_pm_m.txt'):
