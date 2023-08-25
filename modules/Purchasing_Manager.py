@@ -236,19 +236,19 @@ def feedback():
 		st.markdown("---")
 
 
-	if path.isfile(ss.filepath+'fb_pm_m.txt'):
+	if path.isfile(ss.filepath+'fb_pm_pum.txt'):
 		st.markdown("---")
 		st.write("Feedback from the **:red[Project Manager]**")
-		with open(ss.filepath+'fb_pm_m.txt', 'r') as f:
+		with open(ss.filepath+'fb_pm_pum.txt', 'r') as f:
 			text = f.read()
 		st.write(text)
 		st.markdown("---")
 
 
-	if path.isfile(ss.filepath+'fb_pum_m.txt'):
+	if path.isfile(ss.filepath+'fb_m_pum.txt'):
 		st.markdown("---")
-		st.write("Feedback from the **:red[Purchasing Manager]**")
-		with open(ss.filepath+'fb_pum_m.txt', 'r') as f:
+		st.write("Feedback from the **:red[Mechanical Engineer]**")
+		with open(ss.filepath+'fb_m_pum.txt', 'r') as f:
 			text = f.read()
 		st.write(text)
 		st.markdown("---")
