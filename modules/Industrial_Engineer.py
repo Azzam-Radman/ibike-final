@@ -130,24 +130,23 @@ def render():
 			orders_df = pd.read_csv(ss.filepath+'orders.csv')
 
 		if st.button('Reset Table', key=8):
-			os.system(ss.filepath+'rm orders.csv')
+			os.remove(ss.filepath+'orders.csv')
+			part = "Select Part"
 		else:
 			try:
-				orders_df.loc[len(orders_df)] = [part, order_qty]
+				orders_df.loc[orders_df.shape[0]] = [part, order_qty]
 				orders_df = orders_df.drop_duplicates(subset=['Part'], keep='last')
-				orders_df.index = range(1, len(orders_df)+1)
-				orders_df.to_csv(ss.filepath+'orders.csv', index=False)
-				st.text('')
-				st.text('')
-				st.text('')
-				st.write('### Your ordered parts and quantities')
-				orders_df.index = list(range(1, len(orders_df)+1))
+				orders_df.index = range(1, orders_df.shape[0] + 1)
 				orders_df.to_csv(ss.filepath+'orders.csv', index=False)
 			except:
 				pass
 
 	try:
-		st.dataframe(orders_df, width=3000)
+		st.text('')
+		st.text('')
+		st.text('')
+		st.write('### Your ordered parts and quantities')
+		st.dataframe(orders_df, use_container_width=True)
 	except:
 		pass
 	

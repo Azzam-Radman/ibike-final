@@ -52,6 +52,8 @@ def render():
 	    st.dataframe(just_df, width=3000)
 	
 def feedback():
+	st.header("Feedback **:red[TO]**")
+	st.markdown("---")
 	
 	text = ""
 	if path.isfile(ss.filepath+'fb_pm_m.txt'):
@@ -121,6 +123,43 @@ def feedback():
 	if st.button('Clear Feedback', key=3):
 	    if path.isfile(ss.filepath+'fb_pm_d.txt'):
 	        os.remove(ss.filepath+'fb_pm_d.txt')
+
+
+	# reading
+	st.header("Feedback **:red[From]**")
+	if path.isfile(ss.filepath+'fb_d_pm.txt'):
+		st.markdown("---")
+		st.write("Feedback from the **:red[Design Engineer]**")
+		with open(ss.filepath+'fb_d_pm.txt', 'r') as f:
+			text = f.read()
+		st.write(text)
+		st.markdown("---")
+
+	if path.isfile(ss.filepath+'fb_i_pm.txt'):
+		st.markdown("---")
+		st.write("Feedback from the **:red[Industrial Engineer]**")
+		with open(ss.filepath+'fb_i_pm.txt', 'r') as f:
+			text = f.read()
+		st.write(text)
+		st.markdown("---")
+
+
+	if path.isfile(ss.filepath+'fb_m_pm.txt'):
+		st.markdown("---")
+		st.write("Feedback from the **:red[Mechanical Engineer]**")
+		with open(ss.filepath+'fb_m_pm.txt', 'r') as f:
+			text = f.read()
+		st.write(text)
+		st.markdown("---")
+
+
+	if path.isfile(ss.filepath+'fb_pum_pm.txt'):
+		st.markdown("---")
+		st.write("Feedback from the **:red[Purchasing Manager]**")
+		with open(ss.filepath+'fb_pum_pm.txt', 'r') as f:
+			text = f.read()
+		st.write(text)
+		st.markdown("---")
 
 def create_orders():
 		
