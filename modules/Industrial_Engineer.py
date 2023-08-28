@@ -131,6 +131,7 @@ def render():
 
 		if st.button('Reset Table', key=8):
 			os.remove(ss.filepath+'orders.csv')
+			part = "Select Part"
 		else:
 			try:
 				orders_df.loc[orders_df.shape[0]] = [part, order_qty]
@@ -145,7 +146,7 @@ def render():
 		st.text('')
 		st.text('')
 		st.write('### Your ordered parts and quantities')
-		st.dataframe(orders_df)
+		st.table(orders_df, width=3000)
 	except:
 		pass
 	
