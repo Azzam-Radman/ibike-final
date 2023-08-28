@@ -146,7 +146,7 @@ def render():
 		st.text('')
 		st.text('')
 		st.write('### Your ordered parts and quantities')
-		st.table(orders_df, width=3000)
+		st.dataframe(orders_df, use_container_width=True)
 	except:
 		pass
 	
