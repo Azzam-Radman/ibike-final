@@ -130,20 +130,20 @@ def render():
 		if len(vendor_df) > 0:
 			st.dataframe(vendor_df, width=3000)
 	
-		with st.expander('Give Feedback!'):
-			if path.isfile('purchasing_manager_feedback'):
-				with open('purchasing_manager_feedback', 'rb') as f:
-					previous_feedback = f.read().decode()
-				feedback = st.text_area('feedback ...',
-										value=previous_feedback,
-										label_visibility='collapsed')
+		# with st.expander('Give Feedback!'):
+		# 	if path.isfile('purchasing_manager_feedback'):
+		# 		with open('purchasing_manager_feedback', 'rb') as f:
+		# 			previous_feedback = f.read().decode()
+		# 		feedback = st.text_area('feedback ...',
+		# 								value=previous_feedback,
+		# 								label_visibility='collapsed')
 				
-			else:
-				feedback = st.text_area('feedback ...',
-										value='Your feedback...',
-										label_visibility='collapsed')
-			with open('purchasing_manager_feedback', 'w') as f:
-				f.write(feedback)
+		# 	else:
+		# 		feedback = st.text_area('feedback ...',
+		# 								value='Your feedback...',
+		# 								label_visibility='collapsed')
+		# 	with open('purchasing_manager_feedback', 'w') as f:
+		# 		f.write(feedback)
 	
 	
 def feedback():
