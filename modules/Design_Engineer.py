@@ -181,7 +181,7 @@ def render():
 	draw.line([center_coordinates_1, (pt3, pt4)], fill=(255, 0, 0), width=2)
 
 	bottomLeftCornerOfText = center_coordinates_1[0] - 60, center_coordinates_1[1] + 20
-	draw.text(bottomLeftCornerOfText, f'R (FW) = {rR} m', font=font, fill=(0, 0, 0))
+	draw.text(bottomLeftCornerOfText, f'R (RW) = {rR} m', font=font, fill=(0, 0, 0))
 
 	draw.ellipse([(center_coordinates_1[0] - radius_1, center_coordinates_1[1] - radius_1), (center_coordinates_1[0] + radius_1, center_coordinates_1[1] + radius_1)], outline=color, width=thickness)
 
@@ -191,7 +191,7 @@ def render():
 	draw.line([center_coordinates_2, (pt3, pt4)], fill=(255, 0, 0), width=2)
 
 	bottomLeftCornerOfText = center_coordinates_2[0] - 60, center_coordinates_2[1] + 20
-	draw.text(bottomLeftCornerOfText, f'R (RW) = {rF} m', font=font, fill=(0, 0, 0))
+	draw.text(bottomLeftCornerOfText, f'R (FW) = {rF} m', font=font, fill=(0, 0, 0))
 
 	draw.ellipse([(center_coordinates_2[0] - radius_2, center_coordinates_2[1] - radius_2), (center_coordinates_2[0] + radius_2, center_coordinates_2[1] + radius_2)], 		outline=color, width=thickness)
 
