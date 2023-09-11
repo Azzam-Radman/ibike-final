@@ -88,16 +88,16 @@ def render():
 		st.write('**Orders by the :blue[Industrial Engineer]**')
 		st.dataframe(orders, width=3000)
 	
-		st.markdown('---')
-		total_order_cost = round(orders["Ordering Cost ($)"].sum(),2)
-		total_hold_cost = round(orders["Holding Cost ($)"].sum(),2)
-		total_ann_demand = orders['Annual Demand'].sum()
+		# st.markdown('---')
+		# total_order_cost = round(orders["Ordering Cost ($)"].sum(),2)
+		# total_hold_cost = round(orders["Holding Cost ($)"].sum(),2)
+		# total_ann_demand = orders['Annual Demand'].sum()
 	
-		st.write(f'Total Ordering Cost: **:red[${total_order_cost:,}]**')
-		st.write(f'Total Holding Cost : **:red[${total_hold_cost:,}]**')
-		#st.write(f'Total Annual Demand: **:red[{total_ann_demand:,}]**')
-		#st.write(f'**:blue[Economic Order Quantity]: :red[{round(np.sqrt((2*total_order_cost*total_ann_demand)/total_hold_cost), 2):,}]**')
-		st.markdown('---')
+		# st.write(f'Total Ordering Cost: **:red[${total_order_cost:,}]**')
+		# st.write(f'Total Holding Cost : **:red[${total_hold_cost:,}]**')
+		# #st.write(f'Total Annual Demand: **:red[{total_ann_demand:,}]**')
+		# #st.write(f'**:blue[Economic Order Quantity]: :red[{round(np.sqrt((2*total_order_cost*total_ann_demand)/total_hold_cost), 2):,}]**')
+		# st.markdown('---')
 	
 	
 		if path.isfile(ss.filepath+'vendors.csv'):
