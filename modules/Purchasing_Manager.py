@@ -76,8 +76,8 @@ def render():
 	
 	st.markdown('---')
 	st.write('')
-	if path.isfile('orders.csv'):
-		orders = pd.read_csv('orders.csv')
+	if path.isfile(ss.filepath+'orders.csv'):
+		orders = pd.read_csv(ss.filepath+'orders.csv')
 		orders.index = list(range(1, len(orders)+1))
 		orders = orders.merge(eco_df, on='Part', how='left')
 		orders['Ordering Cost ($)'] *= orders['Qty']
@@ -100,12 +100,12 @@ def render():
 		st.markdown('---')
 	
 	
-		if path.isfile('vendors.csv'):
+		if path.isfile(ss.filepath+'vendors.csv'):
 			if st.button('Reset Vendor Selection!'):
 				os.system('rm vendors.csv')
 				vendor_df = pd.DataFrame(columns=['Part', 'Vendor'])
 			else:
-				vendor_df = pd.read_csv('vendors.csv')
+				vendor_df = pd.read_csv(ss.filepath+'vendors.csv')
 		else:
 			vendor_df = pd.DataFrame(columns=['Part', 'Vendor'])
 	
@@ -125,7 +125,7 @@ def render():
 			vendor_df.loc[len(vendor_df), :] = [part_for_vendor, vendor_for_part]
 			vendor_df = vendor_df.drop_duplicates(subset='Part', keep='last')
 			vendor_df.index = list(range(1, len(vendor_df)+1))
-			vendor_df.to_csv('vendors.csv', index=False)
+			vendor_df.to_csv(ss.filepath+'vendors.csv', index=False)
 	
 		if len(vendor_df) > 0:
 			st.dataframe(vendor_df, width=3000)
